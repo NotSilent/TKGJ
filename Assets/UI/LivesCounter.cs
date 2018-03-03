@@ -5,11 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class LivesCounter : MonoBehaviour
 {
-    private void Awake()
-    {
-        DontDestroyOnLoad(this);
-    }
-
     [SerializeField]
     int lives;
     public int Lives

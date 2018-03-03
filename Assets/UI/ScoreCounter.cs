@@ -15,6 +15,7 @@ public class ScoreCounter : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(gameObject);
         Score = 0;
     }
 

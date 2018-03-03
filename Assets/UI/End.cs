@@ -24,9 +24,11 @@ public class End : MonoBehaviour
             score.text = scoreCounter.GetScoreText();
         }
 
-        start.onClick.AddListener(() => SceneManager.LoadScene("Main"));
+        start.onClick.AddListener(() =>
+        {
+            Destroy(scoreCounter.gameObject);
+            SceneManager.LoadScene("Main");
+        });
         end.onClick.AddListener(() => Application.Quit());
-
-        Destroy(scoreCounter.gameObject);
     }
 }

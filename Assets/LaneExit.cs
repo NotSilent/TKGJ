@@ -11,10 +11,12 @@ public class LaneExit : MonoBehaviour
     Destination destination;
 
     ScoreCounter scoreCounter;
+    LivesCounter livesCounter;
 
     private void Start()
     {
         scoreCounter = FindObjectOfType<ScoreCounter>();
+        livesCounter = FindObjectOfType<LivesCounter>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,7 +25,8 @@ public class LaneExit : MonoBehaviour
 
         if(train)
         {
-            Destination [] destinations = train.GetDestinations();
+            Race race = train.GetRace();
+            Destination[] destinations = race.GetDestinations();
 
             bool match = destinations.ToList().Exists(destination => Destination.Match(this.destination, destination));
             if (match)
@@ -33,6 +36,7 @@ public class LaneExit : MonoBehaviour
             else
             {
                 scoreCounter.Add(-REWARD);
+                livesCounter.LoseLive();
             }
 
             train.Destroy();

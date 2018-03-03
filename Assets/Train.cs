@@ -10,9 +10,8 @@ public class Train : MonoBehaviour
     Rigidbody rb;
 
     Vector3 targetPosition;
-
-    [SerializeField]
-    Destination[] destinations;
+    
+    Race race;
 
     TrainSpawner trainSpawner;
 
@@ -34,15 +33,21 @@ public class Train : MonoBehaviour
         MoveForward();
     }
 
+    public void Init(Race race)
+    {
+        this.race = race;
+        Instantiate(race.gameObject, transform);
+    }
+
     public void ChangeTarget(Vector3 targetPosition)
     {
         Vector3 direction = targetPosition - transform.forward;
         this.targetPosition = transform.position + direction * 5000f;
     }
 
-    public Destination[] GetDestinations()
+    public Race GetRace()
     {
-        return destinations;
+        return race;
     }
 
     public void Destroy()
