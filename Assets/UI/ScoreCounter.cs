@@ -29,8 +29,13 @@ public class ScoreCounter : MonoBehaviour
         UpdateText();
     }
 
+    public string GetScoreText()
+    {
+        return $" SCORE: {Score.ToString()}";
+    }
+
     private void UpdateText()
     {
-        text.text = Score.ToString();
+        text.text = GetScoreText(); ;
     }
 }
