@@ -22,7 +22,8 @@ GameObject:
   - component: {fileID: 33505579393836894}
   - component: {fileID: 23193261508263380}
   - component: {fileID: 114359295323955538}
-  m_Layer: 0
+  - component: {fileID: 135805213774413246}
+  m_Layer: 8
   m_Name: Jew
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1497115930608260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -97,3 +98,15 @@ MonoBehaviour:
   race: Jew
   destinations:
   - {fileID: 11400000, guid: 8c2068d0e900b834b83a42329ec55298, type: 2}
+--- !u!135 &135805213774413246
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1497115930608260}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

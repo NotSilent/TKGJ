@@ -38,7 +38,6 @@ public class LaneExit : MonoBehaviour
                 scoreCounter.Add(-REWARD);
                 livesCounter.LoseLive();
             }
-
             train.Destroy();
         }
     }

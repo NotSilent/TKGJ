@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Train : MonoBehaviour
@@ -7,10 +8,13 @@ public class Train : MonoBehaviour
     [SerializeField]
     float speed = 5f;
 
+    [SerializeField]
+    GameObject[] raceSpots = new GameObject[2];
+
     Rigidbody rb;
 
     Vector3 targetPosition;
-    
+
     Race race;
 
     TrainSpawner trainSpawner;
@@ -36,7 +40,7 @@ public class Train : MonoBehaviour
     public void Init(Race race)
     {
         this.race = race;
-        Instantiate(race.gameObject, transform);
+        raceSpots.ToList().ForEach(spot => Instantiate(race.gameObject, spot.transform.position, Quaternion.identity, transform));
     }
 
     public void ChangeTarget(Vector3 targetPosition)
